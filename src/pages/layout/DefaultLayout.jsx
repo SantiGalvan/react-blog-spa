@@ -4,7 +4,9 @@ import Navbar from "../../components/Navbar";
 const DefaultLayout = () => {
     return (<>
         <Navbar />
-        <Outlet />
+        <main>
+            <Outlet />
+        </main>
     </>)
 }
 
