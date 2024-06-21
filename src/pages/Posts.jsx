@@ -20,9 +20,9 @@ const Posts = () => {
 
     return (
         <section className="container">
-            <h1 className="text-center">Lista dei Posts</h1>
             <div className="row g-4">
-                {posts?.map(({ id, title, content, category, tags, user }) => (
+                <h1 className="text-center mb-2">Lista dei Posts</h1>
+                {posts?.map(({ id, title, content, category, tags, user, slug }) => (
                     <div key={id} className="col-4">
                         <Card
                             title={title}
@@ -30,6 +30,7 @@ const Posts = () => {
                             category={category}
                             tags={tags}
                             user={user}
+                            slug={slug}
                         />
                     </div>
                 ))}
