@@ -35,6 +35,7 @@ const PostShow = () => {
                 category={post?.category}
                 tags={post?.tags}
                 user={post?.user}
+                slug={post?.slug}
             />
         </section>
     )

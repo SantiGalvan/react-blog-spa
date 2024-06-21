@@ -49,7 +49,11 @@ const Card = ({ title, content, category, tags, user, slug, isShow }) => {
 
                     <div className='d-flex justify-content-center gap-3'>
 
-                        <button className='btn btn-warning d-flex align-items-center gap-1'><FaPencilAlt />Modifica</button>
+                        <Link
+                            to={`/posts/${slug}/edit`}
+                            className='btn btn-warning d-flex align-items-center gap-1'>
+                            <FaPencilAlt />Modifica
+                        </Link >
                         <button className='btn btn-danger d-flex align-items-center gap-1'><FaTrashAlt />Cancella</button>
                     </div>
                 </div> :
