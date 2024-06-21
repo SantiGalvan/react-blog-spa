@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
     return (
         <header>
@@ -5,10 +7,10 @@ const Navbar = () => {
                 <div className="w-100 d-flex justify-content-center align-items-center">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link">Home</a>
+                            <NavLink className="nav-link" to={'/'}>Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link">Posts</a>
+                            <NavLink className="nav-link" to={'/posts'}>Posts</NavLink>
                         </li>
                     </ul>
                 </div>
