@@ -1,6 +1,8 @@
 import axios from "axios";
+import { FaPlus } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import Card from "../components/Card/Card";
+import { Link } from "react-router-dom";
 
 const apiUrl = import.meta.env.VITE_BASE_API_URL;
 
@@ -21,7 +23,14 @@ const Posts = () => {
     return (
         <section className="container">
             <div className="row g-4">
-                <h1 className="text-center mb-2">Lista dei Posts</h1>
+                <div className="d-flex justify-content-between align-items-center">
+                    <h1 className="mb-2">Lista dei Posts</h1>
+                    <Link
+                        to={'create'}
+                        className="btn btn-success h-75 d-flex align-items-center justify-content-center gap-1">
+                        <FaPlus />Crea Post
+                    </Link>
+                </div>
                 {posts?.map(({ id, title, content, category, tags, user, slug }) => (
                     <div key={id} className="col-4">
                         <Card

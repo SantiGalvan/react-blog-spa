@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import Posts from "./pages/Posts"
 import PostShow from "./pages/PostShow"
 import PostEdit from "./pages/PostEdit"
+import PostCreate from "./pages/PostCreate"
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
               <Route path="edit" element={<PostEdit />} />
 
             </Route>
+
+            {/* Create */}
+            <Route path="create" element={<PostCreate />} />
 
           </Route>
 
