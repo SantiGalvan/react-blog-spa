@@ -1,2 +1,12 @@
 // Bootstrap
 @import "bootstrap/scss/bootstrap";
+
+header {
+    nav {
+        height: 80px;
+
+        a.nav-link {
+            font-size: 1.5rem;
+        }
+    }
+}
