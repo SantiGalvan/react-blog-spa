@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import cardStyle from './Card.module.scss';
-import { FaSearch, FaTrashAlt, FaArrowLeft, FaPencilAlt } from "react-icons/fa";
+import { FaRegEye, FaTrashAlt, FaArrowLeft, FaPencilAlt } from "react-icons/fa";
 
 const Card = ({ title, content, category, tags, user, slug, isShow }) => {
 
@@ -61,7 +61,7 @@ const Card = ({ title, content, category, tags, user, slug, isShow }) => {
                     <Link
                         to={`/posts/${slug}`}
                         className='btn btn-primary d-flex align-items-center gap-1'>
-                        <FaSearch />Vedi
+                        <FaRegEye />Vedi
                     </Link>
                 </div>
             }
