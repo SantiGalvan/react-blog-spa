@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import cardStyle from './Card.module.scss';
 import { FaRegEye, FaTrashAlt, FaArrowLeft, FaPencilAlt } from "react-icons/fa";
 
-const Card = ({ title, content, category, tags, user, slug, isShow }) => {
+const Card = ({ title, content, category, tags, user, slug, isShow, onDelete }) => {
 
     const navigate = useNavigate();
 
@@ -54,7 +54,11 @@ const Card = ({ title, content, category, tags, user, slug, isShow }) => {
                             className='btn btn-warning d-flex align-items-center gap-1'>
                             <FaPencilAlt />Modifica
                         </Link >
-                        <button className='btn btn-danger d-flex align-items-center gap-1'><FaTrashAlt />Cancella</button>
+                        <button
+                            onClick={onDelete}
+                            className='btn btn-danger d-flex align-items-center gap-1'>
+                            <FaTrashAlt />Elimina
+                        </button>
                     </div>
                 </div> :
                 <div className="card-footer d-flex justify-content-center gap-3">
