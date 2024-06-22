@@ -52,7 +52,7 @@ const PostShow = () => {
                     isShow={deleteMode}
                     closeModal={() => setDeleteMode(false)}
                     title={post?.title}
-                    user={post?.user.name}
+                    user={post?.user?.name}
                     clickDelete={() => { deletePost(post.slug) }}
                 />}
         </section>

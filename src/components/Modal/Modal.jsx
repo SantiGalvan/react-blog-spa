@@ -10,7 +10,10 @@ const Modal = ({ isShow, closeModal, title, user, clickDelete }) => {
                         <button onClick={closeModal} type="button" className="btn-close"></button>
                     </div>
                     <div className="modal-body text-center">
-                        <p>Sicuro di voler eliminare <strong>{title}</strong> di <strong>{user}</strong>?</p>
+                        {user ?
+                            <p>Sicuro di voler eliminare <strong>{title}</strong> di <strong>{user}</strong>?</p> :
+                            <p>Sicuro di voler eliminare <strong>{title}</strong>?</p>
+                        }
                     </div>
                     <div className="modal-footer d-flex align-items-center justify-content-between">
                         <button
