@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import cardStyle from './Card.module.scss';
 import { FaRegEye, FaTrashAlt, FaArrowLeft, FaPencilAlt } from "react-icons/fa";
 
-const Card = ({ title, content, category, tags, user, slug, isShow, onDelete }) => {
+const Card = ({ title, content, category, tags, user, slug, image, isShow, onDelete }) => {
 
     const navigate = useNavigate();
 
@@ -12,6 +12,11 @@ const Card = ({ title, content, category, tags, user, slug, isShow, onDelete }) 
                 <h2>{title}</h2>
             </div>
             <div className={`card-body ${cardStyle.body}`}>
+                {(image && isShow) &&
+                    <figure>
+                        <img src={image} alt={title} />
+                    </figure>
+                }
                 <p>{content}</p>
                 <p>{user?.name}</p>
                 <p>

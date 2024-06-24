@@ -45,6 +45,7 @@ const PostShow = () => {
                 tags={post?.tags}
                 user={post?.user}
                 slug={post?.slug}
+                image={post?.image}
                 onDelete={() => setDeleteMode(true)}
             />
             {deleteMode &&

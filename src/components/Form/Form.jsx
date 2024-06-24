@@ -34,7 +34,11 @@ const Form = ({ tags, categories, onCreate }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await axios.post(`${apiUrl}/posts`, formData);
+        const res = await axios.post(`${apiUrl}/posts`, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        });
         setFormData(initialData);
 
         if (res.status < 400) onCreate(res.data);
@@ -57,6 +61,18 @@ const Form = ({ tags, categories, onCreate }) => {
                                 name="title"
                                 value={formData.title}
                                 onChange={(e) => handleField('title', e.target.value)}
+                            />
+                        </div>
+
+                        {/* Immagine */}
+                        <div className="mb-3">
+                            <label htmlFor="title" className="form-label">Immagine del post</label>
+                            <input
+                                type="file"
+                                className="form-control"
+                                id="image"
+                                name="image"
+                                onChange={(e) => handleField('image', e.target.files[0])}
                             />
                         </div>
 
