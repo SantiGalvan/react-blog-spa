@@ -2,9 +2,10 @@ import { TiPlus } from "react-icons/ti";
 import { BsArrowClockwise } from "react-icons/bs";
 import axios from "axios";
 import { useState } from "react";
+
 const apiUrl = import.meta.env.VITE_BASE_API_URL;
 
-const Form = ({ tags, categories }) => {
+const Form = ({ tags, categories, onCreate }) => {
 
     const initialData = {
         title: '',
@@ -33,10 +34,10 @@ const Form = ({ tags, categories }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const res = await axios.post(`${apiUrl}/posts`, formData);
+        setFormData(initialData);
 
-        if (res.status < 400) onCreate();
+        if (res.status < 400) onCreate(res.data);
     }
 
     return (

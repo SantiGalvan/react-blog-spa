@@ -42,6 +42,7 @@ const PostCreate = () => {
             <Form
                 tags={tags}
                 categories={categories}
+                onCreate={data => navigate(`/posts/${data.slug}`)}
             />
         </section>
     )
